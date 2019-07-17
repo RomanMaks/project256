@@ -31,6 +31,18 @@ class Category extends ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            ['name', 'string', 'max' => 512],
+            ['description', 'string', 'max' => 256],
+            [['name', 'description', 'created_at', 'updated_at'], 'safe'],
+        ];
+    }
+
+    /**
      * @return ActiveQuery
      * @throws InvalidConfigException
      */

@@ -29,6 +29,17 @@ class Author extends ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            [['first_name', 'last_name', 'middle_name'], 'string', 'max' => 256],
+            [['first_name', 'last_name', 'middle_name'], 'safe'],
+        ];
+    }
+
+    /**
      * @return ActiveQuery
      */
     public function getPosts(): ActiveQuery

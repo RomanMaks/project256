@@ -35,6 +35,21 @@ class Post extends ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            ['author_id', 'required'],
+            ['author_id', 'integer'],
+            [['title', 'slug'], 'string', 'max' => 256],
+            ['post', 'string'],
+            ['short_name', 'string', 'max' => 1024],
+            [['title', 'slug', 'post', 'short_name', 'created_at', 'updated_at'], 'safe'],
+        ];
+    }
+
+    /**
      * @return ActiveQuery
      */
     public function getAuthor(): ActiveQuery
