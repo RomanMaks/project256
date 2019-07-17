@@ -63,14 +63,14 @@ class m190717_154047_basic_migration extends Migration
     public function safeDown()
     {
         /** Удаление связующей таблицы между таблицами "Посты" и "Категории" */
-//        $this->dropForeignKey('fk_posts_categories_post_id', 'posts_categories');
-//        $this->dropForeignKey('fk_posts_categories_category_id', 'posts_categories');
+        $this->dropForeignKey('fk_posts_categories_post_id', 'posts_categories');
+        $this->dropForeignKey('fk_posts_categories_category_id', 'posts_categories');
         $this->dropIndex('idx_posts_categories_post_id', 'posts_categories');
         $this->dropIndex('idx_posts_categories_category_id', 'posts_categories');
         $this->dropTable('posts_categories');
 
         /** Удаление таблицы "Посты" */
-//        $this->dropForeignKey('fk_posts_author_id', 'posts');
+        $this->dropForeignKey('fk_posts_author_id', 'posts');
         $this->dropIndex('idx_posts_author_id', 'posts');
         $this->dropTable('posts');
 
