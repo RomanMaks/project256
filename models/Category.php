@@ -31,6 +31,20 @@ class Category extends ActiveRecord
     }
 
     /**
+     * @return array|false
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'name',
+            'description',
+            'createdAt' => 'created_at',
+            'updatedAt' => 'updated_at',
+        ];
+    }
+
+    /**
      * @return array
      */
     public function rules()

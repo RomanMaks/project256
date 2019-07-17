@@ -35,6 +35,22 @@ class Post extends ActiveRecord
     }
 
     /**
+     * @return array|false
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'title',
+            'slug',
+            'post',
+            'shortName' => 'short_name',
+            'createdAt' => 'created_at',
+            'updatedAt' => 'updated_at',
+        ];
+    }
+
+    /**
      * @return array
      */
     public function rules()

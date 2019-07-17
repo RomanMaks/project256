@@ -29,6 +29,19 @@ class Author extends ActiveRecord
     }
 
     /**
+     * @return array|false
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'fullName' => function () {
+                return implode(' ', [$this->last_name, $this->first_name, $this->middle_name]);
+            },
+        ];
+    }
+
+    /**
      * @return array
      */
     public function rules()
