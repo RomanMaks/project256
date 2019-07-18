@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Author */
 
 $this->title = 'Информация о авторе';
-$this->params['breadcrumbs'][] = ['label' => 'Автор', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Авторы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

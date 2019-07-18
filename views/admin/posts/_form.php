@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'short_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'post')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'post')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'created_at')->textInput(['type' => 'date']) ?>
 

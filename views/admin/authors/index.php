@@ -28,10 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'first_name',
             'middle_name',
 
-            [
-                'class' => yii\grid\ActionColumn::class,
-                'template' => '{update} {delete} {view}',
-            ],
+            ['class' => yii\grid\ActionColumn::class],
         ],
     ]); ?>
 </div>

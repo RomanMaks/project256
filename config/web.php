@@ -55,18 +55,13 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-                [
-                    'class' => 'yii\rest\UrlRule',
-                    'controller' => [
-                        'api/v1/post',
-                    ],
-                ],
-            ],
-        ],*/
+//        'urlManager' => [
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false,
+//            'rules' => [
+//
+//            ],
+//        ],
     ],
     'params' => $params,
 ];
