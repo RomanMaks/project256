@@ -1,12 +1,14 @@
 <?php
 
+use yii\web\View;
+
 /**
  * @var string $content
- * @var \yii\web\View $this
+ * @var View $this
  */
 
 use yii\helpers\Html;
-//use yiister\gentelella\widgets\Menu;
+use yiister\gentelella\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 
 ?>
@@ -49,7 +51,7 @@ use yii\widgets\Breadcrumbs;
 
                         <div class="menu_section">
                             <h3>General</h3>
-                            <?/*= Menu::widget([
+                            <?= Menu::widget([
                                 'items' => [
                                     [
                                         'label' => 'Home',
@@ -57,134 +59,22 @@ use yii\widgets\Breadcrumbs;
                                         'icon' => 'home'
                                     ],
                                     [
-                                        'label' => 'Оргструктура',
-                                        'url' => '#',
-                                        'icon' => 'object-ungroup',
-                                        'items' => [
-                                            [
-                                                'label' => 'Сотрудники',
-                                                'url' => '/admin/employees',
-                                                'icon' => 'users'
-                                            ],
-                                            [
-                                                'label' => 'Отделы',
-                                                'url' => '/admin/departments',
-                                                'icon' => 'briefcase'
-                                            ],
-                                            [
-                                                'label' => 'Операторы',
-                                                'url' => '/admin/users',
-                                                'icon' => 'user-secret'
-                                            ],
-                                        ]
+                                        'label' => 'Авторы',
+                                        'url' => '/admin/author',
+                                        'icon' => 'users'
                                     ],
                                     [
-                                        'label' => 'Правила уведомлений',
-                                        'url' => '/admin/notification-rule',
-                                        'icon' => 'briefcase'
+                                        'label' => 'Посты',
+                                        'url' => '/admin/post',
+                                        'icon' => 'users'
                                     ],
                                     [
-                                        'label' => 'Устройства',
-                                        'url' => '#',
-                                        'icon' => 'object-ungroup',
-                                        'items' => [
-                                            [
-                                                'label' => 'Устройства',
-                                                'url' => '/admin/devices',
-                                                'icon' => 'users'
-                                            ],
-                                            [
-                                                'label' => 'Конфигурации устройств',
-                                                'url' => '/admin/devices-settings',
-                                                'icon' => 'briefcase'
-                                            ],
-                                            [
-                                                'label' => 'Прошивки устройств',
-                                                'url' => '/admin/devices-firmwares',
-                                                'icon' => 'briefcase'
-                                            ]
-                                        ]
-                                    ],
-                                    [
-                                        'label' => 'Табель рабочего времени',
-                                        'url' => '#',
-                                        'icon' => 'calendar',
-                                        'items' => [
-                                            [
-                                                'label' => 'Табель рабочего времени',
-                                                'url' => '/admin/timesheet',
-                                                'icon' => 'calendar'
-                                            ],
-                                            [
-                                                'label' => 'Настройка времени опоздания и прогула',
-                                                'url' => '/admin/working-time-settings',
-                                                'icon' => 'gear'
-                                            ],
-                                        ]
-                                    ],
-                                    [
-                                        'label' => 'Отчёт о рабочем времени',
-                                        'url' => '/admin/work-time-report',
-                                        'icon' => 'clock-o'
-                                    ],
-                                    [
-                                        'label' => 'Средства индивидуальной защиты',
-                                        'url' => '#',
-                                        'icon' => 'fire-extinguisher',
-                                        'items' => [
-                                            [
-                                                'label' => 'Список средств индивидуальной защиты',
-                                                'url' => '/admin/ppe/equipments',
-                                                'icon' => 'list-ul'
-                                            ],
-                                            [
-                                                'label' => 'Наборы',
-                                                'url' => '/admin/ppe/sets',
-                                                'icon' => 'archive'
-                                            ],
-                                            [
-                                                'label' => 'Типы',
-                                                'url' => '/admin/ppe/types',
-                                                'icon' => 'cubes'
-                                            ],
-                                        ]
-                                    ],
-                                    [
-                                        'label' => 'Звуковые оповещения',
-                                        'url' => '#',
-                                        'icon' => 'volume-up',
-                                        'items' => [
-                                            [
-                                                'label' => 'Звуковые оповещения',
-                                                'url' => '/admin/device-notifications',
-                                                'icon' => 'volume-up'
-                                            ],
-                                            [
-                                                'label' => 'Статусы',
-                                                'url' => '/admin/device-notifications-statuses',
-                                                'icon' => 'check'
-                                            ],
-                                        ]
-                                    ],
-                                    [
-                                        'label' => 'Географические объекты',
-                                        'url' => '/admin/geoobjects',
-                                        'icon' => 'map-marker'
-                                    ],
-                                    [
-                                        'label' => 'Тестирование',
-                                        'url' => '#',
-                                        'icon' => 'list-alt',
-                                        'items' => [
-                                            [
-                                                'label' => 'Аварийное',
-                                                'url' => '/admin/emergency',
-                                                'icon' => 'asterisk'
-                                            ],
-                                        ]
+                                        'label' => 'Категории',
+                                        'url' => '/admin/category',
+                                        'icon' => 'users'
                                     ],
                                 ]
-                            ]) */?>
+                            ]) ?>
                         </div>
 
                     </div>
@@ -222,7 +112,7 @@ use yii\widgets\Breadcrumbs;
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                    aria-expanded="false">
-                                    Humanplus
+                                    Project 256
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                             </li>
