@@ -2,20 +2,20 @@
 
 namespace app\controllers\admin;
 
-use app\controllers\admin\actions\authors\Create;
-use app\controllers\admin\actions\authors\Delete;
-use app\controllers\admin\actions\authors\Index;
-use app\controllers\admin\actions\authors\Update;
+use app\controllers\admin\actions\posts\Create;
+use app\controllers\admin\actions\posts\Delete;
+use app\controllers\admin\actions\posts\Index;
+use app\controllers\admin\actions\posts\Update;
 
 /**
- * Class AuthorController
+ * Class PostController
  * @package app\controllers\admin
  */
-class AuthorController extends AdminController
+class PostController extends AdminController
 {
     public function getViewPath()
     {
-        return '@app/views/admin/authors';
+        return '@app/views/admin/posts';
     }
 
     public function actions()

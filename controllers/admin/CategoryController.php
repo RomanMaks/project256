@@ -2,20 +2,20 @@
 
 namespace app\controllers\admin;
 
-use app\controllers\admin\actions\authors\Create;
-use app\controllers\admin\actions\authors\Delete;
-use app\controllers\admin\actions\authors\Index;
-use app\controllers\admin\actions\authors\Update;
+use app\controllers\admin\actions\categories\Create;
+use app\controllers\admin\actions\categories\Delete;
+use app\controllers\admin\actions\categories\Index;
+use app\controllers\admin\actions\categories\Update;
 
 /**
- * Class AuthorController
+ * Class CategoryController
  * @package app\controllers\admin
  */
-class AuthorController extends AdminController
+class CategoryController extends AdminController
 {
     public function getViewPath()
     {
-        return '@app/views/admin/authors';
+        return '@app/views/admin/categories';
     }
 
     public function actions()
