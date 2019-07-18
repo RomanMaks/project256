@@ -9,6 +9,7 @@ use yii\grid\GridView;
 $this->title = 'Авторы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="author-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

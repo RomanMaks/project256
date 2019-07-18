@@ -10,6 +10,7 @@ $this->title = 'Информация о авторе';
 $this->params['breadcrumbs'][] = ['label' => 'Автор', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="author-view">
 
     <h1><?= Html::encode($this->title) ?></h1>

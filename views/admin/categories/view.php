@@ -4,14 +4,14 @@ use yii\widgets\DetailView;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Post */
+/* @var $model app\models\Category */
 
-$this->title = 'Информация о посте';
-$this->params['breadcrumbs'][] = ['label' => 'Пост', 'url' => ['index']];
+$this->title = 'Информация о категории';
+$this->params['breadcrumbs'][] = ['label' => 'Категория', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="post-view">
+<div class="category-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -24,10 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'title',
-            'slug',
-            'short_name',
-            'post',
+            'name',
+            'description',
         ],
     ]);
     ?>

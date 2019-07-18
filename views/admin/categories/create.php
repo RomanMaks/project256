@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Post */
+/* @var $model app\models\Category */
 
-$this->title = 'Добавить пост';
-$this->params['breadcrumbs'][] = ['label' => 'Посты', 'url' => ['index']];
+$this->title = 'Добавить категорию';
+$this->params['breadcrumbs'][] = ['label' => 'Категории', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<div class="post-create">
+<div class="category-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
