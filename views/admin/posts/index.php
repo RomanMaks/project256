@@ -26,6 +26,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'short_name',
+            [
+                'attribute' => 'author_id',
+                'value' => 'author.last_name',
+                'label' => 'Автор'
+            ],
+            [
+                'attribute' => 'category_id',
+                'value' => 'category.name',
+                'label' => 'Категория'
+            ],
             'created_at',
             'updated_at',
 

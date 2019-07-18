@@ -9,9 +9,10 @@ use yii\web\View;
 
 use yii\helpers\Html;
 use yiister\gentelella\widgets\Menu;
+use yiister\gentelella\assets\Asset;
 use yii\widgets\Breadcrumbs;
 
-$bundle = yiister\gentelella\assets\Asset::register($this);
+$bundle = Asset::register($this);
 
 ?>
 <?php $this->beginPage(); ?>
@@ -68,12 +69,12 @@ $bundle = yiister\gentelella\assets\Asset::register($this);
                                     [
                                         'label' => 'Посты',
                                         'url' => '/admin/post',
-                                        'icon' => 'users'
+                                        'icon' => 'list'
                                     ],
                                     [
                                         'label' => 'Категории',
                                         'url' => '/admin/category',
-                                        'icon' => 'users'
+                                        'icon' => 'sitemap'
                                     ],
                                 ]
                             ]) ?>

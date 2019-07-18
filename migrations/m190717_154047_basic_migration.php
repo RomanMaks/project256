@@ -33,6 +33,7 @@ class m190717_154047_basic_migration extends Migration
         $this->createTable('posts', [
             'id' => $this->primaryKey(),
             'author_id' => $this->integer()->notNull(),
+            'category_id' => $this->integer()->notNull(),
             'title' => $this->string(256),
             'slug' => $this->string(256),
             'post' => $this->text(),
@@ -43,18 +44,8 @@ class m190717_154047_basic_migration extends Migration
 
         $this->createIndex('idx_posts_author_id', 'posts', 'author_id');
         $this->addForeignKey('fk_posts_author_id', 'posts', 'author_id', 'authors', 'id', 'CASCADE');
-
-        /** Создание связующей таблицы между таблицами "Посты" и "Категории" */
-        $this->createTable('posts_categories', [
-            'post_id' => $this->integer(),
-            'category_id' => $this->integer(),
-        ]);
-
-        $this->addPrimaryKey('post_category_pkey', 'posts_categories', ['post_id', 'category_id']);
-        $this->createIndex('idx_posts_categories_post_id', 'posts_categories', 'post_id');
-        $this->createIndex('idx_posts_categories_category_id', 'posts_categories', 'category_id');
-        $this->addForeignKey('fk_posts_categories_post_id', 'posts_categories', 'post_id', 'posts', 'id', 'CASCADE');
-        $this->addForeignKey('fk_posts_categories_category_id', 'posts_categories', 'category_id', 'categories', 'id', 'CASCADE');
+        $this->createIndex('idx_posts_category_id', 'posts', 'category_id');
+        $this->addForeignKey('fk_posts_category_id', 'posts', 'category_id', 'categories', 'id', 'CASCADE');
     }
 
     /**
@@ -62,16 +53,11 @@ class m190717_154047_basic_migration extends Migration
      */
     public function safeDown()
     {
-        /** Удаление связующей таблицы между таблицами "Посты" и "Категории" */
-        $this->dropForeignKey('fk_posts_categories_post_id', 'posts_categories');
-        $this->dropForeignKey('fk_posts_categories_category_id', 'posts_categories');
-        $this->dropIndex('idx_posts_categories_post_id', 'posts_categories');
-        $this->dropIndex('idx_posts_categories_category_id', 'posts_categories');
-        $this->dropTable('posts_categories');
-
         /** Удаление таблицы "Посты" */
         $this->dropForeignKey('fk_posts_author_id', 'posts');
         $this->dropIndex('idx_posts_author_id', 'posts');
+        $this->dropForeignKey('fk_posts_category_id', 'posts');
+        $this->dropIndex('idx_posts_category_id', 'posts');
         $this->dropTable('posts');
 
         /** Удаление таблицы "Категории" */

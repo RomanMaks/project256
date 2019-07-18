@@ -6,6 +6,7 @@ use app\controllers\admin\actions\categories\Create;
 use app\controllers\admin\actions\categories\Delete;
 use app\controllers\admin\actions\categories\Index;
 use app\controllers\admin\actions\categories\Update;
+use app\controllers\admin\actions\categories\View;
 
 /**
  * Class CategoryController
@@ -25,6 +26,7 @@ class CategoryController extends AdminController
             'create' => Create::class,
             'update' => Update::class,
             'delete' => Delete::class,
+            'view' => View::class,
         ];
     }
 }

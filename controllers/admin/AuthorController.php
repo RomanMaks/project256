@@ -6,6 +6,7 @@ use app\controllers\admin\actions\authors\Create;
 use app\controllers\admin\actions\authors\Delete;
 use app\controllers\admin\actions\authors\Index;
 use app\controllers\admin\actions\authors\Update;
+use app\controllers\admin\actions\authors\View;
 
 /**
  * Class AuthorController
@@ -25,6 +26,7 @@ class AuthorController extends AdminController
             'create' => Create::class,
             'update' => Update::class,
             'delete' => Delete::class,
+            'view' => View::class,
         ];
     }
 }

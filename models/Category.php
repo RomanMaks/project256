@@ -58,11 +58,9 @@ class Category extends ActiveRecord
 
     /**
      * @return ActiveQuery
-     * @throws InvalidConfigException
      */
     public function getPosts(): ActiveQuery
     {
-        return $this->hasMany(Post::class, ['id' => 'post_id'])
-            ->viaTable('posts_categories', ['category_id' => 'id']);
+        return $this->hasMany(Post::class, ['category_id' => 'id']);
     }
 }

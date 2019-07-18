@@ -26,6 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'description',
+            [
+                'value' => function ($dataProvider) {
+                    return count($dataProvider->posts);
+                },
+                'label' => 'Кол-во постов'
+            ],
             'created_at',
             'updated_at',
 

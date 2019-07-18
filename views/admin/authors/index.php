@@ -27,6 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'last_name',
             'first_name',
             'middle_name',
+            [
+                'value' => function ($dataProvider) {
+                    return count($dataProvider->posts);
+                },
+                'label' => 'Кол-во постов'
+            ],
 
             ['class' => yii\grid\ActionColumn::class],
         ],

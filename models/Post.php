@@ -14,6 +14,7 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property integer $author_id
+ * @property integer $category_id
  * @property string $title
  * @property string $slug
  * @property string $post
@@ -22,7 +23,7 @@ use yii\db\ActiveRecord;
  * @property string $updated_at
  *
  * @property Author $author
- * @property Category[] $categories
+ * @property Category $category
  */
 class Post extends ActiveRecord
 {
@@ -75,11 +76,9 @@ class Post extends ActiveRecord
 
     /**
      * @return ActiveQuery
-     * @throws InvalidConfigException
      */
-    public function getCategories(): ActiveQuery
+    public function getCategory(): ActiveQuery
     {
-        return $this->hasMany(Category::class, ['id' => 'category_id'])
-            ->viaTable('posts_categories', ['post_id' => 'id']);
+        return $this->hasOne(Category::class, ['id' => 'category_id']);
     }
 }
