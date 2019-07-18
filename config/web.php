@@ -19,6 +19,15 @@ $config = [
                 'application/json' => 'yii\web\JsonParser',
             ]
         ],
+        'response' => [
+            'formatters' => [
+                'json' => [
+                    'class' => 'yii\web\JsonResponseFormatter',
+                    'prettyPrint' => YII_DEBUG,
+                    'encodeOptions' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+                ]
+            ],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
