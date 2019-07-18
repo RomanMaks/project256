@@ -50,7 +50,17 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => false,
+            'normalizer' => [
+                'class' => \yii\web\UrlNormalizer::class,
+                'collapseSlashes' => true,
+                'normalizeTrailingSlash' => true,
+            ],
             'rules' => [
+                'admin/<controller>' => 'admin/<controller>/index',
+                'admin/<controller>/<id:\d+>' => 'Admin/<controller>/view',
+                'admin/<controller>/<id:\d+>/<action>' => 'Admin/<controller>/<action>',
+                'admin/<controller>/<action>/<modelName:\w+>/<id:\d+>' => 'Admin/<controller>/<action>',
+                'admin/<controller>/<action>' => 'Admin/<controller>/<action>',
                 //'/admin/post' => 'admin/post/index',
             ],
         ],
