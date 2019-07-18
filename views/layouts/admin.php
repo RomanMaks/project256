@@ -11,6 +11,8 @@ use yii\helpers\Html;
 use yiister\gentelella\widgets\Menu;
 use yii\widgets\Breadcrumbs;
 
+$bundle = yiister\gentelella\assets\Asset::register($this);
+
 ?>
 <?php $this->beginPage(); ?>
     <!DOCTYPE html>
