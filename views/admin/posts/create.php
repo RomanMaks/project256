@@ -9,7 +9,7 @@ $this->title = 'Добавить пост';
 $this->params['breadcrumbs'][] = ['label' => 'Посты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="author-create">
+<div class="post-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
