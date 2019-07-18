@@ -2,7 +2,6 @@
 
 namespace app\controllers\admin;
 
-use yii\filters\AccessControl;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
@@ -13,28 +12,6 @@ use yii\web\Controller;
 class AdminController extends Controller
 {
     public $layout = 'admin';
-
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::class,
-                'rules' => [
-                    [
-                        'actions' => ['error'],
-                        'allow' => true,
-                    ],
-                    [
-                        'allow' => true,
-                        'roles' => ['accessAdmin'],
-                    ],
-                ],
-            ],
-        ];
-    }
 
     /**
      * @param $action
