@@ -46,6 +46,12 @@ class Post extends ActiveRecord
             'slug',
             'post',
             'shortName' => 'short_name',
+            'category' => function () {
+                return $this->category->name;
+            },
+            'author' => function () {
+                return $this->author->fullName();
+            },
             'createdAt' => 'created_at',
             'updatedAt' => 'updated_at',
         ];

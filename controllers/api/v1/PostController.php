@@ -10,6 +10,10 @@ use app\controllers\api\v1\actions\posts\Index;
  */
 class PostController extends ApiController
 {
+    protected static $methods = [
+        'index' => ['GET'],
+    ];
+
     public function actions()
     {
         return [

@@ -59,4 +59,9 @@ class Author extends ActiveRecord
     {
         return $this->hasMany(Post::class, ['author_id' => 'id']);
     }
+
+    public function fullName()
+    {
+        return implode(' ', [$this->last_name, $this->first_name, $this->middle_name]);
+    }
 }
