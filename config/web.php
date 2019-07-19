@@ -62,6 +62,11 @@ $config = [
                 'admin/<controller>/<action>/<modelName:\w+>/<id:\d+>' => 'admin/<controller>/<action>',
                 'admin/<controller>/<action>' => 'admin/<controller>/<action>',
                 '<controller>/<id:\d+>' => '<controller>/view',
+
+                'GET /api/v1/<controller>' => 'api/v1/<controller>/index',
+//                'DELETE /api/v1/<controller>' => 'api/v1/<controller>/delete',
+//                'POST /api/v1/<controller>' => 'api/v1/<controller>/create',
+
             ],
         ],
     ],
