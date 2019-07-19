@@ -4,7 +4,7 @@ use yii\web\View;
 use app\models\Post;
 
 /* @var View $this */
-/* @var Post[] $posts*/
+/* @var Post[] $models*/
 
 $this->title = 'Project 256';
 ?>
@@ -13,7 +13,7 @@ $this->title = 'Project 256';
     <div class="body-content">
 
         <div class="row">
-            <?php foreach ($posts as $post): ?>
+            <?php foreach ($models as $post): ?>
                 <div class="col-lg-4">
                     <h2><?= $post->title ?></h2>
 
