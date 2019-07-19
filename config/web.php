@@ -61,6 +61,7 @@ $config = [
                 'admin/<controller>/<id:\d+>/<action>' => 'admin/<controller>/<action>',
                 'admin/<controller>/<action>/<modelName:\w+>/<id:\d+>' => 'admin/<controller>/<action>',
                 'admin/<controller>/<action>' => 'admin/<controller>/<action>',
+                '<controller>/<id:\d+>' => '<controller>/view',
             ],
         ],
     ],

@@ -25,7 +25,7 @@ class View extends Action
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
-        return $this->controller->render('view', [
+        return $this->controller->render('post', [
             'model' => $model,
         ]);
     }
