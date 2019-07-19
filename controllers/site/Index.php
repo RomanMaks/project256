@@ -4,6 +4,7 @@ namespace app\controllers\site;
 
 use app\models\Post;
 use yii\base\Action;
+use yii\data\Pagination;
 
 /**
  * Class Index
@@ -16,10 +17,20 @@ class Index extends Action
      */
     public function run()
     {
-        $models = Post::find()->all();
+        $query = Post::find();
+        $pages = new Pagination([
+            'totalCount' => $query->count(),
+            'pageSize' => 4,
+            'forcePageParam' => false,
+            'pageSizeParam' => false
+        ]);
+        $models = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
 
         return $this->controller->render('index', [
             'models' => $models,
+            'pages' => $pages,
         ]);
     }
 }

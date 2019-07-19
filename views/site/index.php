@@ -1,10 +1,13 @@
 <?php
 
+use yii\data\Pagination;
 use yii\web\View;
 use app\models\Post;
+use yii\widgets\LinkPager;
 
 /* @var View $this */
 /* @var Post[] $models*/
+/* @var Pagination $pages*/
 
 $this->title = 'Project 256';
 ?>
@@ -23,6 +26,9 @@ $this->title = 'Project 256';
                 </div>
             <?php endforeach; ?>
         </div>
+        <?= LinkPager::widget([
+            'pagination' => $pages,
+        ]); ?>
 
     </div>
 </div>
