@@ -2,7 +2,10 @@
 
 namespace app\controllers\api\v1;
 
-use app\controllers\api\v1\actions\posts\Index;
+use app\controllers\api\v1\actions\posts\All;
+use app\controllers\api\v1\actions\posts\One;
+use app\controllers\api\v1\actions\posts\Update;
+use app\controllers\api\v1\actions\posts\Delete;
 
 /**
  * Class PostController
@@ -11,13 +14,17 @@ use app\controllers\api\v1\actions\posts\Index;
 class PostController extends ApiController
 {
     protected static $methods = [
-        'index' => ['GET'],
+        'one' => ['GET'],
+        'update' => ['POST'],
     ];
 
     public function actions()
     {
         return [
-            'index' => Index::class,
+            'all' => All::class,
+            'one' => One::class,
+            'delete' => Delete::class,
+            'update' => Update::class,
         ];
     }
 }

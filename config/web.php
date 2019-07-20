@@ -59,14 +59,14 @@ $config = [
                 'admin/<controller>' => 'admin/<controller>/index',
                 'admin/<controller>/<id:\d+>' => 'admin/<controller>/view',
                 'admin/<controller>/<id:\d+>/<action>' => 'admin/<controller>/<action>',
-                'admin/<controller>/<action>/<modelName:\w+>/<id:\d+>' => 'admin/<controller>/<action>',
                 'admin/<controller>/<action>' => 'admin/<controller>/<action>',
+
                 '<controller>/<id:\d+>' => '<controller>/view',
 
-//                'GET /api/v1/<controller>' => 'api/v1/<controller>/index',
-//                'DELETE /api/v1/<controller>' => 'api/v1/<controller>/delete',
-//                'POST /api/v1/<controller>' => 'api/v1/<controller>/create',
-
+                'GET /api/v1/<controller>' => 'api/v1/<controller>/all',
+                'GET /api/v1/<controller>/<id:\d+>' => 'api/v1/<controller>/one',
+                'DELETE /api/v1/<controller>/<id:\d+>' => 'api/v1/<controller>/delete',
+                'POST /api/v1/<controller>' => 'api/v1/<controller>/update',
             ],
         ],
     ],

@@ -6,10 +6,12 @@ use app\models\Post;
 use yii\rest\Action;
 
 /**
- * Class Index
+ * Действие вернет все посты
+ *
+ * Class All
  * @package app\controllers\api\v1\actions\posts
  */
-class Index extends Action
+class All extends Action
 {
     public $modelClass = 'app\models\Post';
 
