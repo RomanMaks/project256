@@ -25,8 +25,10 @@ class m190717_154047_basic_migration extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(512),
             'description' => $this->string(256),
-            'created_at' => $this->timestamp()->notNull(),
-            'updated_at' => $this->timestamp()->null(),
+            'created_at' => $this->timestamp()
+                ->defaultExpression('CURRENT_TIMESTAMP'),
+            'updated_at' => $this->timestamp()
+                ->defaultExpression('CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP'),
         ]);
 
         /** Создание таблицы "Посты" */
@@ -38,8 +40,10 @@ class m190717_154047_basic_migration extends Migration
             'slug' => $this->string(256),
             'post' => $this->text(),
             'short_name' => $this->string(1024),
-            'created_at' => $this->timestamp()->notNull(),
-            'updated_at' => $this->timestamp()->null(),
+            'created_at' => $this->timestamp()
+                ->defaultExpression('CURRENT_TIMESTAMP'),
+            'updated_at' => $this->timestamp()
+                ->defaultExpression('CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP'),
         ]);
 
         $this->createIndex('idx_posts_author_id', 'posts', 'author_id');
