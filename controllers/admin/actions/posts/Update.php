@@ -2,6 +2,8 @@
 
 namespace app\controllers\admin\actions\posts;
 
+use app\models\Author;
+use app\models\Category;
 use app\models\Post;
 use yii\base\Action;
 use yii\web\NotFoundHttpException;
@@ -34,8 +36,18 @@ class Update extends Action
                 ]);
         }
 
+        $categories = Category::find()
+            ->indexBy('id')
+            ->column();
+
+        $authors = Author::find()
+            ->indexBy('id')
+            ->column();
+
         return $this->controller->render('update', [
             'model' => $model,
+            'categories' => $categories,
+            'authors' => $authors,
         ]);
     }
 }

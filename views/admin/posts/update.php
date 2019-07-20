@@ -4,7 +4,8 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Post */
-/* @var array $departmentsList */
+/* @var array $categories */
+/* @var array $authors */
 
 $this->title = 'Редактировать пост: ';
 $this->params['breadcrumbs'][] = ['label' => 'Посты', 'url' => ['index']];
@@ -17,6 +18,8 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <?= $this->render('_form', [
         'model' => $model,
+        'categories' => $categories,
+        'authors' => $authors,
     ]) ?>
 
 </div>
