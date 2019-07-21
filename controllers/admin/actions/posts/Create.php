@@ -31,10 +31,12 @@ class Create extends Action
 
         $categories = Category::find()
             ->indexBy('id')
+            ->select('name')
             ->column();
 
         $authors = Author::find()
             ->indexBy('id')
+            ->select('last_name')
             ->column();
 
         return $this->controller->render('create', [

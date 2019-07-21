@@ -38,10 +38,12 @@ class Update extends Action
 
         $categories = Category::find()
             ->indexBy('id')
+            ->select('name')
             ->column();
 
         $authors = Author::find()
             ->indexBy('id')
+            ->select('last_name')
             ->column();
 
         return $this->controller->render('update', [
